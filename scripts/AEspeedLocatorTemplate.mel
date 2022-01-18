@@ -1,0 +1,56 @@
+/*  AEspeedLocatorTemplate.mel
+	The Attribute Editor template for the speedLocator  plugin.
+*/
+
+global proc AEspeedLocatorTemplate(string $nodeName) {
+	// Main layout
+	editorTemplate -beginScrollLayout;
+
+		editorTemplate -beginLayout "Locator Attributes" -collapse true;
+			AElocatorCommon $nodeName;
+			editorTemplate -endLayout;
+		
+		editorTemplate -beginLayout "Speed Display" -collapse false;
+			editorTemplate -addControl "text";
+			editorTemplate -addControl "precision";
+			editorTemplate -addControl "textSize";
+			editorTemplate -addControl "textOffset";
+			editorTemplate -addControl "unitType";
+			editorTemplate -addControl "shape";
+			editorTemplate -endLayout;
+
+		editorTemplate -beginLayout (uiRes("m_AEshapeTemplate.kObjectDisplay"));
+			// include/call base class/node attributes
+			AEdagNodeCommon $nodeName;
+		editorTemplate -endLayout;
+		// include/call base class/node attributes
+		AEdagNodeInclude $nodeName;
+		
+		// hide attributes attributes
+		editorTemplate -beginNoOptimize;
+		editorTemplate -suppress "aInWorldMatrix";
+		editorTemplate -suppress "motionBlur";
+		editorTemplate -suppress "visibleInReflections";
+		editorTemplate -suppress "visibleInRefractions";
+		editorTemplate -suppress "castsShadows";
+		editorTemplate -suppress "receiveShadows";
+		editorTemplate -suppress "maxVisibilitySamplesOverride";
+		editorTemplate -suppress "maxVisibilitySamples";
+		editorTemplate -suppress "geometryAntialiasingOverride";
+		editorTemplate -suppress "antialiasingLevel";
+		editorTemplate -suppress "shadingSamplesOverride";
+		editorTemplate -suppress "shadingSamples";
+		editorTemplate -suppress "maxShadingSamples";
+		editorTemplate -suppress "volumeSamplesOverride";
+		editorTemplate -suppress "volumeSamples";
+		editorTemplate -suppress "depthJitter";
+		editorTemplate -suppress "ignoreSelfShadowing";
+		editorTemplate -suppress "primaryVisibility";
+		editorTemplate -suppress "compInstObjGroups";
+		editorTemplate -suppress "componentTags";
+		editorTemplate -endNoOptimize;
+	
+	editorTemplate -addExtraControls;
+	// End Main Layout
+	editorTemplate -endScrollLayout;
+};
