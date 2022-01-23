@@ -1,24 +1,43 @@
-# speedLocator
-Custom locator which shows the speed of moving objects in Autodesk Maya.
+P# speedLocator
+SpeedLocator is a user-defined MPxLocatorNode which shows the speed of moving objects in Autodesk Maya.
 
 ![speedLocator loaded in Maya](/images/speedLocatorStill2.png)
+
+
 
 # Video Tutorial:
 [![Watch the video](/images/introSlate.png)](https://vimeo.com/667222084)
 
+
+
 # How to install:
-https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2022/ENU/Maya-Customizing/files/GUID-FA51BD26-86F3-4F41-9486-2C3CF52B9E17-htm.html
 
-### On windows copy the content of:
-`speedLocator/plug-ins/windows/2022/*` to
-`C:/Users/<username>/Documents/maya/2022/plug-ins`
+### Automated installation: (Requires Maya 2022 with Python 3.7)
+1. Unzip the archive.
+2. Drag and drop the "dragDropInstaller.py" into the Maya 3d viewport.
+3. Follow the steps on screen.
 
-`speedLocator/prefs/icons/*` to `C:/Users/<username>/Documents/maya/2022/prefs/icons`
+### Manual installation:
+1. Close all running instances of Maya.
+2. Go to your Maya modules directory (create the "modules" folder if it does not exist):
+```
+(Windows) /Users/<username>/Documents/maya/modules/
+(Mac OS X) $HOME/Library/Preferences/Autodesk/maya/modules/
+(Linux)	$HOME/maya/modules/
+```
+3. Copy the "speedLocator" folder and "speedLocator.mod" file in the modules folder.
 
-`speedLocator/scripts/*` to `C:/Users/<username>/Documents/maya/scripts`
+![speedLocator loaded in Maya](/images/speedLocatorManualInstallation.png)
+
+4. Start Maya, the module will be loaded and the console should print out:
+```
+// Successfully imported plugin module 'speedLocator' v.X.X.X //
+```
+
+
 
 # How to use:
-After loading the plugin in maya, type `speed` in the mel command line. Works with selection. You can as well provide a custom name with the -n flag. Some practical use examples:
+After loading the plugin in Maya, type `speed` in the mel command line. Works with selection. You can as well provide a custom name with the -n flag. Some practical use examples:
 #### Mel:
 ```
 speed;
@@ -35,10 +54,16 @@ cmds.speed(n="speedometer")
 ```
 
 
+# Supported Maya versions and platforms:
+```
+Windows: Maya 2022, 2020
+Linux:   Maya 2022
+MacOS:   Coming Soon
+```
+
 # Release Notes:
 ```
 Version 1.0.0
 
 Initial release
-
 ```
