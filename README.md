@@ -1,4 +1,4 @@
-P# speedLocator
+# speedLocator
 SpeedLocator is a user-defined MPxLocatorNode which shows the speed of moving objects in Autodesk Maya.
 
 ![speedLocator loaded in Maya](/images/speedLocatorStill2.png)
