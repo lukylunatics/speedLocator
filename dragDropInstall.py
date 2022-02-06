@@ -126,6 +126,7 @@ def onMayaDroppedPythonFile(*args, **kwargs):
 		raise RuntimeError("Installation of SpeedLocator has been cancelled!")
 	else:  # Installation continues
 		_createDirsForCopying()
+
 		finished = False
 		for pkg in INSTALLATIONPACKAGE:
 			pkgQt = QtCore.QFile(pkg)
